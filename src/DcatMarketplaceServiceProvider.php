@@ -27,11 +27,18 @@ class DcatMarketplaceServiceProvider extends ServiceProvider
             $path = $setting['path'] ?? 'dcat-marketplace';
             $marketplaceUrl = admin_url($path);
             Admin::script(<<<JS
-$('.icon-shopping-cart').closest('button,a,.btn').add('.icon-shopping-cart').parent().off('click.dcatMarketplace').on('click.dcatMarketplace', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    window.location.href = '{$marketplaceUrl}';
-});
+(function () {
+    var url = '{$marketplaceUrl}';
+    function go(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = url;
+    }
+    $('.icon-shopping-cart').parent().off('click.dcatMarketplace').on('click.dcatMarketplace', go);
+    $('button, a, .btn').filter(function () {
+        return $.trim($(this).text()) === '应用市场' || $(this).find('.icon-shopping-cart').length;
+    }).off('click.dcatMarketplace').on('click.dcatMarketplace', go);
+})();
 JS
             );
 
