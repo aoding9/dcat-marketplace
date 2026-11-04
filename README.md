@@ -2,6 +2,8 @@
 
 dcat admin 扩展市场
 
+> 本仓库为适配 fork：兼容 **PHP ^8.3（含 8.5）** / Laravel 10–13，并修复扩展启用时 MySQL DDL 事务等问题。
+
 当前收录的扩展总计 <b>47</b> 个
 
 ![extension-market](https://tvax4.sinaimg.cn/large/a16fd57dly1h6oqbvnyqgj21h80tx76u.jpg)
