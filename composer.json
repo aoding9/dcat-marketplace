@@ -1,6 +1,6 @@
 {
-    "name": "aoding9/dcat-marketplace",
-    "description": "Dcat扩展市场 (fork of sparkinzy/dcat-marketplace)",
+    "name": "sparkinzy/dcat-marketplace",
+    "description": "Dcat扩展市场 (fork adapted for PHP 8.3+)",
     "type": "library",
     "version": "2.0.2",
     "keywords": ["dcat-admin", "extension"],
@@ -18,7 +18,7 @@
     },
     "replace": {
         "sparkinzy/dcat-extension-client": "self.version",
-        "sparkinzy/dcat-marketplace": "self.version"
+        "aoding9/dcat-marketplace": "self.version"
     },
     "autoload": {
         "psr-4": {
